@@ -1,0 +1,305 @@
+@mixin badge {
+  font-size: 2.5rem;
+  font-weight: 700;
+  width: 6rem;
+  height: 6rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  display: block;
+  margin-bottom: 2rem;
+  background-color: $submit-color;
+  color: #fff;
+  border-radius: 50%;
+}
+
+@mixin feature-section {
+  padding: 7rem 4rem;
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+.feature-section {
+  padding: 10rem 0;
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+
+    @include respond(tab-port) {
+      justify-content: center;
+      grid-template-columns: 80%;
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 3rem;
+    }
+
+    .feature-section__1,
+    .feature-section__2,
+    .feature-section__3 {
+      @include feature-section;
+      .number-badge {
+        @include badge;
+      }
+    }
+  }
+}
+.about-section {
+  padding: 10rem 0;
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 80%;
+      grid-row-gap: 3rem;
+      justify-content: center;
+    }
+
+    .about-section-one {
+      .about-head {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      .about-box {
+        padding: 2rem;
+        &__one,
+        &__two,
+        &__three {
+          display: grid;
+          grid-template-columns: 17% 1fr;
+          grid-template-rows: 4rem 4rem 4rem;
+          .icon {
+            @include badge;
+            background-color: $nav-color;
+          }
+        }
+      }
+    }
+    .about-section-two {
+      display: flex;
+      justify-content: flex-end;
+
+      @include respond(tab-port) {
+        justify-content: center;
+      }
+      .form-box {
+        width: 48rem;
+        height: 48rem;
+        background-color: #333;
+        border-radius: 50%;
+        padding: 0 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @include respond(tab-port) {
+          width: 60rem;
+          border-radius: 3px;
+        }
+
+        .form-header {
+          color: #fff;
+          font-size: 3rem;
+          margin-bottom: 2rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 2rem 1rem;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+        }
+      }
+    }
+  }
+}
+
+.teacher-section {
+  padding: 10rem 0;
+  background-color: #f1f1f1;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 1fr;
+  grid-row-gap: 3rem;
+
+  @include respond(tab-port) {
+    grid-template-rows: 10% 80%;
+    grid-row-gap: 0;
+  }
+
+  @include respond(phone) {
+    grid-template-rows: 5% 80%;
+    grid-row-gap: 0;
+  }
+
+  &__two {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 3rem;
+
+      @include respond(tab-port) {
+        grid-template-columns: 40% 40%;
+        grid-row-gap: 1rem;
+        justify-content: center;
+      }
+
+      @include respond(phone) {
+        grid-template-columns: 80%;
+      }
+    }
+  }
+}
+
+.courses-section {
+  padding: 10rem 0;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 1fr;
+  grid-row-gap: 3rem;
+
+  @include respond(tab-port) {
+    padding: 10rem 0 20rem;
+    grid-template-rows: 10% 1fr;
+    grid-row-gap: 0;
+  }
+
+  &__two {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 3rem;
+      @include respond(tab-port) {
+        justify-content: center;
+        grid-template-columns: 80%;
+        grid-row-gap: 3rem;
+      }
+    }
+  }
+}
+
+.review-section {
+  padding: 10rem 0;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 1fr;
+  grid-row-gap: 3rem;
+  background-color: #f1f1f1;
+
+  @include respond(tab-port) {
+    grid-template-rows: 10% 1fr;
+  }
+
+  &__two {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 3rem;
+
+      @include respond(tab-port) {
+        justify-content: center;
+        grid-template-columns: 80%;
+        grid-row-gap: 3rem;
+      }
+    }
+  }
+}
+
+.form-section {
+  padding: 10rem 0;
+  background-color: $submit-color;
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 80%;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  &__one {
+    padding-top: 2rem;
+    input {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      width: 95%;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      padding: 1.8rem;
+    }
+    textarea {
+      margin-top: 1rem;
+      width: 95%;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      resize: none;
+      font-family: "Nunito";
+      padding: 1.5rem;
+      &::placeholder {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__two {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+
+    img {
+      width: 60rem;
+    }
+  }
+}
+
+.footer {
+  padding: 10rem 0;
+  background-color: #252020;
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include respond(tab-port) {
+      grid-template-columns: 80%;
+      justify-content: center;
+      grid-row-gap: 3rem;
+      text-align: center;
+    }
+  }
+  .footer-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgba($color: #fff, $alpha: 0.4);
+    transition: all 0.5s;
+    &:hover {
+      color: $nav-color;
+    }
+  }
+  input {
+    width: 80%;
+    padding: 2rem 1rem;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.4);
+  }
+}

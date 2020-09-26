@@ -1,0 +1,147 @@
+.navbar {
+  height: 8rem;
+  width: 100%;
+  background-color: #fff;
+  border-top: 0.5rem solid #29ca8e;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  // overflow: hidden;
+  z-index: 9999;
+
+  @include respond(phone) {
+    height: 10rem;
+  }
+
+  .nav-items {
+    max-width: 114rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    @include respond(tab-port) {
+      overflow: visible;
+      padding: 0 5rem;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: #333;
+      font-size: 2.5rem;
+      font-weight: 700;
+
+      @include respond(phone) {
+        font-size: 3.5rem;
+      }
+    }
+    .menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      @include respond(tab-port) {
+        display: none;
+      }
+
+      li {
+        float: left;
+        a:link,
+        a:visited {
+          font-size: 1.5rem;
+          color: #333;
+          text-decoration: none;
+          text-align: center;
+          display: inline-block;
+          padding: 2.7rem 2rem;
+          transition: all 0.5s;
+
+          @include respond(tab-port) {
+            font-size: 2.5rem;
+            background-color: #fff;
+            width: 30rem;
+            margin-bottom: 1rem;
+          }
+        }
+        a.active,
+        a:hover,
+        a:active {
+          background-color: #29ca8e;
+          color: #fff;
+
+          @include respond(tab-port) {
+            background-color: #fff;
+            color: #333;
+          }
+        }
+        .fa-phone {
+          background-color: #29ca8e;
+          border-radius: 50%;
+          color: #fff;
+          text-align: center;
+          padding: 1rem;
+          margin-right: 0.5rem;
+        }
+      }
+      .phone-number {
+        margin-left: 13rem;
+
+        @include respond(tab-port) {
+          margin-left: 0;
+        }
+      }
+      .close {
+        display: none;
+        #close {
+          width: 5rem;
+          height: 5rem;
+          padding: 1rem;
+          border-radius: 50%;
+        }
+        @include respond(tab-port) {
+          display: block;
+          position: absolute;
+          top: 1%;
+          left: 4%;
+        }
+      }
+    }
+
+    .responsive {
+      @include respond(tab-port) {
+        height: 80vh;
+        width: 50vw;
+        background-color: #29ca8e;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 10;
+      }
+    }
+
+    .navigate {
+      list-style: none;
+      position: absolute;
+      right: 0;
+      display: none;
+
+      @include respond(tab-port) {
+        right: 5rem;
+        display: block;
+      }
+      .topnav {
+        font-size: 3rem;
+        color: #333;
+
+        @include respond(phone) {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+}
